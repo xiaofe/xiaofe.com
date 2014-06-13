@@ -1,0 +1,126 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Elements - New Feature of HTML5</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+	<header>
+		<h1>Elements - New Feature of HTML5</h1>
+		<a href="http://www.w3.org/html/wg/drafts/html/master/" target="_blank" class="draft">draft</a>
+	</header>
+
+	<section class="feature">
+		<h2><em>download</em> attribute on <i>a</i> element<a href="#download" name="download" class="anchor"></a></h2>
+		<section class="sec code">
+			<div class="t">code</div>
+			<code>
+				<p>&lt;a href="http://www.qq.com" download="newFileName"&gt;test download&lt;/a&gt;</p>
+			</code>
+		</section>
+		<section class="sec demo">
+			<div class="t">demo</div>
+			<script type="text/javascript">
+				function dlShortCut(_this){
+					var content = "[InternetShortcut]\r\n" + 
+						"URL=http://my.qzone.qq.com/\r\n" + 
+						"IconFile=http://my.qzone.qq.com/favicon.ico\r\n" + 
+						"IconIndex=0\r\n";
+					var blob = new Blob([content]);
+					_this.href = URL.createObjectURL(blob);
+					_this.download = "Qzone Appstore.url";
+				}
+			</script>
+			<p>
+				<a href="res/dl_test.html" download="newFileName">"A" element with download attr.(html)</a>
+			</p>
+			<p>
+				<a href="res/img.jpg" target="_blank" download="live_another_day.jpg">"A" element with download attr.(img)</a>
+			</p>
+			<p>
+				<a href="#" onclick="dlShortCut(this);">create ShortCut</a>
+			</p>
+		</section>
+		<section class="sec caniuse">
+			<div class="t">caniuse</div>
+			<p>
+				<img src="snapshot/download.png">
+			</p>
+		</section>
+		<section class="sec more_info">
+			<div class="t">compatibility</div>
+			<p><strong>IE</strong>不支持</p>
+			<p>当<strong>download</strong>值不带后缀时，<strong>Firefox</strong>不会自动补充后缀</p>
+		</section>
+	</section>
+
+	<section class="feature">
+		<h2><em>reversed</em> on <i>ol</i> element<a href="#reversed" name="reversed" class="anchor"></a></h2>
+		<section class="sec code">
+			<div class="t">code</div>
+			<code>
+				<p>&lt;ol reversed&gt;</p>
+				<p>&nbsp;&nbsp;&lt;li&gt;Coffee&lt;/li&gt;</p>
+				<p>&nbsp;&nbsp;&lt;li&gt;Milk&lt;/li&gt;</p>
+				<p>&nbsp;&nbsp;&lt;li&gt;Tea&lt;/li&gt;</p>
+				<p>&lt;/ol&gt;</p>
+			</code>
+		</section>
+		<section class="sec demo">
+			<div class="t">demo</div>
+			<p>
+				<ol reversed="false">
+					<li>Coffee</li>
+					<li>Tea</li>
+					<li>Milk</li>
+				</ol>
+			</p>
+		</section>
+		<section class="sec more_info">
+			<div class="t">compatibility</div>
+			<p><strong>IE</strong>不支持</p>
+		</section>
+	</section>
+
+	<section class="feature">
+		<h2><em>hidden</em> attribute(Global)<a href="#hidden" name="hidden" class="anchor"></a></h2>
+		<section class="sec code">
+			<div class="t">code</div>
+			<code>
+				<p>&lt;span hidden&gt;hidden text&lt;/span&gt;</p>
+			</code>
+		</section>
+		<section class="sec demo">
+			<div class="t">demo</div>
+			<style type="text/css">
+				.f_hidden{color:red; display: block}
+			</style>
+			<p>这后面有字 --> <span class="" hidden>hidden text</span> <-- 这前面有字</p>
+		</section>
+		<section class="sec more_info">
+			<div class="t">compatibility</div>
+			<p><strong>IE</strong>不支持</p>
+			<p>与display:none语义上的差别</p>
+		</section>
+	</section>
+
+	<section class="feature">
+		<h2>new <i>link</i> type <em>noreferrer</em><a href="#noreferrer" name="noreferrer" class="anchor"></a></h2>
+		<section class="sec code">
+			<div class="t">code</div>
+			<code>
+				<p>&lt;a href="#" rel="noreferrer"&gt;content&lt;/a&gt;</p>
+			</code>
+		</section>
+		<section class="sec demo">
+			<div class="t">demo</div>
+			<p><a href="res/show_referrer.html" target="_blank" rel="noreferrer">no referrer link</a></p>
+			<p><a href="res/show_referrer.html" target="_blank">normal link</a></p>
+		</section>
+		<section class="sec more_info">
+			<div class="t">compatibility</div>
+			<p><strong>IE</strong>/<strong>Firefox</strong>不支持, <strong>Chrome</strong>/<strong>Opera</strong>支持</p>
+		</section>
+	</section>
+</body>
+</html>

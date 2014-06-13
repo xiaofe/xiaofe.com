@@ -1,0 +1,7 @@
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	破产姐妹 第三季	broke-girls.jpg	1	null	null	4
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	神盾局特工 第一季	agents-of-shield.jpg	1	null	null	2
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	黑名单 第一季	black-list.jpg	1	null	null	0
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	生活大爆炸 第七季	the-big-bang-theroy.jpg	1	null	null	3
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	复仇 第三季	revenge.jpg	1	null	null	2
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	人质 第一季	hostages.jpg	1	null	null	2
+null	otSznjq7RwQbFbm9ZD7qG3HkbIxA	基本演绎法国	elementary.jpg	2	null	null	3

@@ -1,0 +1,24 @@
+html, body, header, section, h1, h2, code, p, form{border: 0; margin: 0; padding: 0;}
+body{font-family: "Verdana"; font-size: 14px; overflow-x: hidden;}
+a:visited{color:rgb(0, 0, 238);}
+header{display: block; width: 100%; height: 40px; line-height: 40px; padding-left: 15px; background-color: #000; color: #FFF;}
+header h1{font-size: 1.2em}
+header .draft{position: absolute; top: 0px; right: 10px; color: #FFF; font-size: 12px; vertical-align: bottom;}
+.anchor{display: inline-block; visibility: hidden; margin-left: 5px; margin-right: 5px; background: url(res/anchor.png); height: 15px; width: 15px;}
+.feature{margin: 20px auto 40px; width: 95%;}
+.feature em{color: #F00;}
+.feature strong{margin-left: 3px; margin-right: 3px;}
+.feature h2{font-size: 1.5em; margin-bottom: 10px;}
+.feature h2:hover .anchor{visibility: visible;}
+.sec{display: block; position: relative; margin-top: 10px; padding: 15px 10px 10px; background-color: #DDD; overflow: hidden; min-height: 20px;}
+.sec .t{position: absolute; right: 0px; top: 0px; width: 100px; height: 25px; background-color: #ccc; text-align: center; line-height: 25px; font-weight: bold;}
+.sec p{padding-left: 5px; line-height: 25px;}
+.feature .caniuse p{text-align: center;}
+.feature .caniuse img{width: 850px; height: 420px; border-radius: 15px; box-shadow: 3px 3px 5px #ccc}
+.more_info .t{width: 120px;}
+.more_info table{width: 70%; margin: 0 auto; border-collapse: collapse;}
+.more_info table, .more_info tr, .more_info th, .more_info td{border: 1px solid #563d7c;}
+.more_info th{color: #FFF; background-color: #563d7c; padding: 6px;}
+.more_info td{padding: 10px;}
+code{font-family: 'Consolas'; overflow: hidden;}
+code p{padding-left: 5px; line-height: 25px;}

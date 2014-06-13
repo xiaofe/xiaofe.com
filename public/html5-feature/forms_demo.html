@@ -1,0 +1,213 @@
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8">
+	<title>Forms Demo - New Feature of HTML5</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		.demo_list li{margin-bottom: 10px;}
+		.demo_list li .tips{line-height: 1.2; padding-top: 10px; padding-bottom: 2px;}
+	</style>
+	<script type="text/javascript">
+		document.createElement('header');
+		document.createElement('section');
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		function submitHandler(that){
+			if (that.getElementsByClassName){
+				that.getElementsByClassName('rest')[0].innerHTML = 'submited';
+			} else {
+				alert('submited');
+			}
+		}
+		function GET(id){
+			return document.getElementById(id)
+		}
+	</script>
+	<header>
+		<h1>Forms Demo - New Feature of HTML5</h1>
+		<a href="http://www.w3.org/html/wg/drafts/html/master/" target="_blank" class="draft">draft</a>
+	</header>
+	<section class="feature">
+		<h2>Forms Demo</h2>
+		<section class="sec demo_list">
+			<ul>
+				<li>
+					<a href="#datalist" name="datalist">datalist</a> : <span><input list="browsers" id="datalist" /></span>
+					<datalist id="browsers">
+						<option value="Internet Explorer">
+						<option value="Firefox">
+						<option value="Chrome">
+						<option value="Chrome Beta">
+						<option value="Chrome Dev">
+						<option value="Chrome Canary">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#required" name="required">required</a> : <span><input type="text" required /></span>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					</form>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#pattern" name="pattern">pattern</a> : <span><input type="text" pattern="\d{4,5}" title="\d{4,5}" required></span>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					</form>
+					<div class="tips">
+						<ol>
+							<li>出错提示（除了opera，后同）</li>
+							<li>title会显示在出错提示里（除了opera） </li>
+							<li>value为空不校验 </li>
+							<li>添加required字段后，按正则校验</li>
+						</ol>
+					</div>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;" id="eform">
+						<a href="#number" name="number">type="number"</a> : <span><input type="number" max="10" min="2" step="2" id="einput"></span>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>IE下行为古怪：非数字时，input内容被清空，表单提交</li>
+							<li>value为空不校验</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#url" name="url">type="url"</a> : <span><input type="url"></span>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>IE下校验 /^\s*([A-Za-z][A-Za-z0-9]+|[0-9][A-Za-z0-9]*)/ </li>
+							<li>chrome\opera\firefox下校验 /^\s*[A-Za-z][A-Za-z0-9]*:/ </li>
+							<li>iPhone中的 Safari 浏览器支持 url 输入类型，并通过改变触摸屏键盘来配合它（添加 .com 选项）</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#email" name="email">type="email"</a> : <span><input type="email"></span>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>pattern : /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#color" name="color">type="color"</a> : <span><input type="color" id="ipt_color" value="#0000FF"></span>
+						<input type="button" onclick="document.getElementById('ipt_color').value='#ff0000'" value="setColor(#FF0000)" />
+						<input type="button" onclick="document.getElementById('ipt_color').value='invalid'" value="setColor(invalid)" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>默认值：#000000</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<form onsubmit="submitHandler(this); return false;">
+						<a href="#range" name="range">type="range"</a> : <span><input type="range" min="0" max="100" step="20" value="50" id="ipt_range" onchange="document.getElementById('ret_range').innerHTML = document.getElementById('ipt_range').value"></span>
+						<span class="rest" id="ret_range" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>当value不符合step时，	取最近的一个value；</li>
+							<li>当有两个相同“最近”值时，取靠近正无穷的那个</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<script type="text/javascript">
+						function showVal(){
+							var _time = document.getElementById('ipt_time').value,
+								_date = document.getElementById('ipt_date').value,
+								_week = document.getElementById('ipt_week').value,
+								_month = document.getElementById('ipt_month').value;
+							alert('time : ' + _time + ';\r\ndate=' + _date + ';\r\nweek=' + _week + ';\r\nmonth=' + _month);
+						}
+					</script>
+					<form onsubmit="showVal();submitHandler(this); return false;">
+						<a href="#date_time" name="date_time">type="time"</a> : <span><input id="ipt_time" type="time"></span><br>
+						<a href="#date_time">type="date"</a> : <span><input id="ipt_date" type="date"></span><br>
+						<a href="#date_time">type="week"</a> : <span><input id="ipt_week" type="week"></span><br>
+						<a href="#date_time">type="month"</a> : <span><input id="ipt_month" type="month"></span><br>
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					</form>
+				</li>
+				<li>
+					<a href="#validity" name="validity">attribute <em>validity</em></a>
+				</li>
+				<li>
+					<a href="#setCustomValidity" name="setCustomValidity">method <em>setCustomValidity</em></a>
+					<div class="tips">
+						<ol>
+							<li>GET('einput').setCustomValidity('There\'s a fucking error, bro! (' + GET("einput").id+ ')');</li>
+							<li>GET('einput').validationMessage;</li>
+						</ol>
+					</div>
+				</li>
+				<li>
+					<form action="keygen" target="_blank">
+						<a href="#keygen" name="keygen">Username</a> : <span><input type="text" value="username" name="username"></span><br>
+						Encryption: <keygen name="security" challenge="0987654321" />
+						<input type="submit" value="submit" />
+						<span class="rest" onclick="this.innerHTML = '';"></span>
+					<div class="tips">
+						<ol>
+							<li>客户端身份加密验证</li>
+							<li> keytype ： "rsa"</li>
+						</ol>
+					</div>
+					</form>
+				</li>
+				<li>
+					<a href="#progress" name="progress">progress</a> : <progress id="progress" max="100">not support progress element</progress>
+					<input type="button" onclick="moveProg(true);" value="move" />
+					  position:<span class="rest" id="progress_pos" onclick="this.innerHTML = '';"></span>
+					<script type="text/javascript">
+						var progPercent = 0,
+							progTimer = null,
+							progEle = document.getElementById('progress'),
+							progPos = document.getElementById('progress_pos');
+						function moveProg(isReset){
+							if (isReset){
+								progTimer && clearTimeout(progTimer);
+								progTimer = null;
+								progPercent = 0;
+							}
+							progEle.value = progPercent;
+							progPos.innerHTML = progEle.position;
+							progPercent += 5;
+							progPercent <= 100 && (progTimer = setTimeout(function (){moveProg()}, 100));
+						}
+					</script>
+					<div class="tips">
+						<ol>
+							<li>value为空时，IE/chrome有动画，firefox默认100，opera默认0</li>
+							<li>position只读属性，value/max</li>
+						</ol>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</section>
+</body>
+</html>
