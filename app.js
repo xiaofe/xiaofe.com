@@ -36,7 +36,7 @@ if ('development' == app.get('env')) {
 
 // app.get('/', routes.index);
 app.get('/', function (req, res){
-	res.sendfile('./public/html/index.html');
+	res.sendfile(__dirname + '/public/html/index.html');
 });
 app.get('/common/?*', rt_common);
 app.get('/drama', rt_drama.rt_drama);
