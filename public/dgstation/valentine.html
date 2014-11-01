@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<title>四喜小站七夕活动，分享即得免费礼物</title>
+	<style type="text/css">
+		html, head, body, div, p, span, h1, h2, ul, li{margin:0;padding:0;border:0;}
+		a, a:hover, a:visited, a:hover, a:active{text-decoration: none;}
+		body{font-size: 14px; font-family: 'Helvetica Neue', "Microsoft Yahei", Tahoma, Arial; color:#000; width: 90%; text-align: center; margin: 20px auto;}
+		.header img{width: 100%}
+		.act{margin-top: 30px;}
+		.act p{line-height: 1.5; text-align: left;}
+		.act .subtitle{color: red; font-weight: 600; font-size: 16px; margin-bottom: 10px;}
+		.act .act-img{text-align: center; margin-top: 20px;}
+		.act .act1-img img{text-align: center;width: 50%;}
+		.act .act2-img img{width: 80%;}
+		.footer{border-top: 2px #CCC solid; margin-top: 50px; padding-top: 30px;}
+		.footer img{width: 90%}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<img src="title.jpg">
+	</div>
+	<div class="content">
+		<section class="act">
+			<p class="subtitle">活动一：给我一个吻</p>
+			<p>四喜小站七夕索吻行动，从即刻起，转发该活动到朋友圈，添加四喜小站的微信：dgstation，将朋友圈截图给四喜并留下收货地址和联系方式，即可免费获得价值30元的爱丽小屋唇膜一张！(限量200份) </p>
+			<p class="act-img act1-img"><img src="act1.jpg"></p>
+		</section>
+		<section class="act">
+			<p class="subtitle">活动二：爱要大声告诉你</p>
+			<p>添加四喜小站，给心爱的TA的一句浪漫表白，截图给到四喜，并且留下对方的名字，收货地址和联系方式。四喜小站将在情人节当天选出
+3位幸运情侣，送出我们的情人节礼盒套装一份（雅诗兰黛价值488护肤品套装和精美化妆包一个）。邮费自理。公布方式请关注四喜朋友圈！</p>
+			<p class="act-img act2-img"><img src="act2.jpg"></p>
+		</section>
+	</div>
+	<div class="footer">
+		<img src="qr.jpg">
+	</div>
+	<script>
+		var imgUrl = "http://xiaofe.com/dgstation/logo.jpg";
+		var lineLink = "http://xiaofe.com/dgstation/valentine.html";
+		var descContent = '四喜小站七夕活动，分享即得免费礼物';
+		var shareTitle = '限量情人节礼物免费送，你领了没？！';
+		var appid = '';
+		function shareFriend() {
+			WeixinJSBridge.invoke('sendAppMessage',{
+				"appid": appid,
+				"img_url": imgUrl,
+				"img_width": "200",
+				"img_height": "200",
+				"link": lineLink,
+				"desc": descContent,
+				"title": shareTitle
+			}, function(res) {
+			});
+		}
+		function shareTimeline() {
+			WeixinJSBridge.invoke('shareTimeline',{
+				"img_url": imgUrl,
+				"img_width": "200",
+				"img_height": "200",
+				"link": lineLink,
+				"desc": descContent,
+				"title": shareTitle
+			}, function(res) {
+			});
+		}
+		function shareWeibo() {
+			WeixinJSBridge.invoke('shareWeibo',{
+				"content": descContent,
+				"url": lineLink,
+			}, function(res) {
+			});
+		}
+		function readyHandler(){
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function(argv){
+				shareFriend();
+			});
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function(argv){
+				shareTimeline();
+			});
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function(argv){
+				shareWeibo();
+			});
+		}
+
+		if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+			readyHandler();
+		} else {
+			if (document.addEventListener) {
+				document.addEventListener("WeixinJSBridgeReady", readyHandler, false);
+			} else if (document.attachEvent) {
+				document.attachEvent("WeixinJSBridgeReady", readyHandler);
+				document.attachEvent("onWeixinJSBridgeReady", readyHandler);
+			}
+		}
+	</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35364126" charset="UTF-8"></script>
+</body>
+</html>
