@@ -20,7 +20,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/public/upload/img'}));
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), {maxAge : 604800000}));
@@ -38,7 +38,7 @@ if ('development' == app.get('env')) {
 app.get('/', function (req, res){
 	res.sendfile(__dirname + '/public/html/index.html');
 });
-app.get('/common/?*', rt_common);
+app.all('/common/?*', rt_common);
 app.get('/drama', rt_drama.rt_drama);
 app.get('/weixin/interface', weixin.getToken);
 app.post('/weixin/interface', weixin.postReq);

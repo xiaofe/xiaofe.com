@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name="Description" content="upload image" />
+		<meta name="Keywords" content="xiaofe,upload image" />
+		<title>UploadImage</title>
+	</head>
+	<body>
+		<h1>Upload</h1>
+		<form action="/common/uploadimg" method="POST" target="proxy" enctype="multipart/form-data" onsubmit="return check();">
+			<input name="img" type="file" id="upload_file" /><br>
+			<input name="keep" id="keep" type="checkbox"><label for="keep">keep upload file name(may overwrite the exist file with the same name)</label><br>
+			<input type="submit" value="Upload">
+		</form>
+		<script type="text/javascript">
+			function check(){
+				var _file = document.getElementById('upload_file');
+				if (!_file.value){
+					return false;
+				}
+			}
+		</script>
+		<iframe src="" name="proxy" id="proxy" style="margin-top:20px;width:100%;height:600px;border:1px orange solid"></iframe>
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35364126" charset="UTF-8"></script>
+	</body>
+</html>
