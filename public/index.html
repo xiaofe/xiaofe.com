@@ -10,8 +10,8 @@
 			a, a:hover, a:visited, a:hover, a:active{text-decoration: none;}
 			li{list-style:none;}
 			html{
-				height: 100%; width: 100%; background: url('../img/bg.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-				background-size: cover; -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bg.jpg', sizingMethod='scale')"; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bg.jpg', sizingMethod='scale');
+				height: 100%; width: 100%; background: url('img/bg.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+				background-size: cover; -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale')"; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale');
 			}
 			body{
 				font-size: 14px; font-family: 'Helvetica Neue', "Microsoft Yahei", Tahoma, Arial; color:#FFF; height: 100%; width: 100%;
@@ -20,7 +20,7 @@
 				max-width: 960px; margin: 0 auto;
 			}
 			.header{
-				position: relative; width: 100%; height: 70px;
+				position: relative; width: 100%; height: 50px;
 			}
 			.footer{
 				position: fixed; bottom: 0; width: 100%; height: 30px; background-color: #548D0C;
@@ -39,10 +39,10 @@
 				height: 100%; width: 100%; background-color: #FFF; opacity: .2;
 			}
 			.menu{
-				position: absolute; left: 0; top: 0; height: 100%; width: 100%; height: 70px; z-index: 10;
+				position: absolute; left: 0; top: 0; height: 100%; width: 100%;  z-index: 10;
 			}
 			.menu li{
-				float: right; display: block; height: 70px; line-height: 70px; text-align: center; color: #FFF; padding-left: 20px; padding-right: 20px; cursor: pointer;
+				float: right; display: block; line-height: 50px; text-align: center; color: #FFF; padding-left: 20px; padding-right: 20px; cursor: pointer;
 			}
 			.menu li:hover{
 				background-color: #7C7C7C;
@@ -70,7 +70,7 @@
 				height: 100%; width: 100%; background-color: #FFF; opacity: .9; border-radius: 1px;
 			}
 			.pop .close{
-				position: absolute; right: 10px; top: 10px; font-size: 40px; height: 25px; width: 25px; line-height: 25px; cursor: pointer; color: green;
+				position: absolute; right: 10px; top: 10px; font-size: 40px; height: 25px; width: 25px; line-height: 25px; cursor: pointer; color: green; z-index: 100;
 			}
 			.pop .content{
 				position: absolute; left: 0; top: 0; height: 100%; width: 100%; padding-left: 50px; color: #2b2b2b;
@@ -79,7 +79,7 @@
 				height: 310px; width: 800px; top: 60px;
 			}
 			.about-me .content{
-				top: 30px;
+				top: 20px;
 			}
 			.about-me .avatar{
 				height: 100px; width: 100px; position: absolute; top: 10px; left: 40px; overflow: hidden; border: 2px solid green;
@@ -116,11 +116,11 @@
 					<p>私人领地，内有猛兽</p>
 				</div>
 			</div>
-			<div class="pop about-me" id="about-me" style="height:310px;width:800px;display:none">
+			<div class="pop about-me" id="about-me" style="height:315px;width:800px;display:none">
 				<div class="bg"></div>
 				<div class="close" onclick="document.getElementById('about-me').style.display='none';">×</div>
 				<div class="content">
-					<div class="avatar"><img src="../img/me.jpg" /></div>
+					<div class="avatar"><img src="img/me.jpg" /></div>
 					<div class="info">
 						<p class="name">小铁</p>
 						<p>前端攻城师 \ 僵尸仔</p>

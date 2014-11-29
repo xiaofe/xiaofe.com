@@ -15,7 +15,7 @@ var weixin = require('./routes/weixin');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.NODE_DEV_PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
@@ -36,7 +36,7 @@ if ('development' == app.get('env')) {
 
 // app.get('/', routes.index);
 app.get('/', function (req, res){
-	res.sendfile(__dirname + '/public/html/index.html');
+	res.sendfile(__dirname + '/public/index.html');
 });
 app.all('/common/?*', rt_common);
 app.get('/drama', rt_drama.rt_drama);
