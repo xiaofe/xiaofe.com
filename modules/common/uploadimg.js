@@ -7,15 +7,15 @@ function main (req, res){
 		keepOName = !!req.param('keep'),
 		targetName = keepOName ? oName : (new Date).getTime() + oName.slice(oName.lastIndexOf('.'));
 
-	console.log(uploadImg);
+//	console.log(uploadImg);
 
 	fs.rename(uploadImg.path, outDir + targetName, function (err){
 		if (err){
 			res.end('rename error')	;
 		} else {
-			// res.end("http://www.xiaofe.com/upload/img/" + targetName + ' : ok');
+			res.end("http://www.xiaofe.com/upload/img/" + targetName + ' : ok');
 
-			fs.readFile(outDir + targetName, "binary", function (error,file){
+/*			fs.readFile(outDir + targetName, "binary", function (error,file){
 				if(error){
 					res.writeHead(500, {"Content-Type" : "text/plain"});
 					res.write(error + "\n");
@@ -25,7 +25,7 @@ function main (req, res){
 					res.write(file,"binary");
 					res.end();
 			    }
-			});
+			});*/
 		}
 	})
 }
