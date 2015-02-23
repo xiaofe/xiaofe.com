@@ -5,12 +5,14 @@ var http = require('http'),
 var outDir = './public/gm/', ws;
 
 function dlImg(url, cb){
-	if (!url){
-		return
+	if (!url || !/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/.test(url)){
+		cb({ret : -1, msg : "no url found or illegal!"});
+		return;
 	}
+
 	http.get(url, function (res) {
 		if (res.statusCode != 200){
-			cb({ret : -1, msg : 'http request img failed', httpCode : res.statusCode});
+			cb({ret : -3, msg : 'http request img failed', httpCode : res.statusCode});
 			return;
 		}
 		if (res.headers['content-type'].indexOf('image') != 0){

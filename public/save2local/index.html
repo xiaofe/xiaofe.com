@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>save2local</title>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="padding-left: 10%;padding-right: 10%;">
+            <div class="page-header">
+                <h1>Save2Local</h1>
+            </div>
+            <form role="search" id="form" action="/common/save2local" method="get" target="proxy" onsubmit="submitHandler();return false;">
+                <div class="form-group">
+                    <label for="url">Image Url</label>
+                    <input id="url" name="url" type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Save</button>
+            </form>
+            <iframe name="proxy" id="proxy" src="" frameborder="0" style="width: 100%;margin-top: 20px;"></iframe>
+        </div>
+    </div>
+    <script>
+        function submitHandler(){
+            var text = document.getElementById('url'),
+                    form = document.getElementById('form');
+            if (!text.value){
+                window.console && console.log('empty url');
+                return false;
+            } else {
+                form.submit();
+            }
+        }
+    </script>
+</body>
+</html>

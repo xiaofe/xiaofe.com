@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<title>XiaoFe</title>
+		<style type="text/css">
+			html, head, body, div, p, span, h1, h2, ul, li{margin:0;padding:0;border:0;}
+			a, a:hover, a:visited, a:hover, a:active{text-decoration: none;}
+			li{list-style:none;}
+			html{
+				height: 100%; width: 100%; background: url('img/bg.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+				background-size: cover; -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale')"; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale');
+			}
+			body{
+				font-size: 14px; font-family: 'Helvetica Neue', "Microsoft Yahei", Tahoma, Arial; color:#FFF; height: 100%; width: 100%;
+			}
+			.layer-center{
+				max-width: 960px; margin: 0 auto;
+			}
+			.header{
+				position: relative; width: 100%; height: 50px;
+			}
+			.footer{
+				position: fixed; bottom: 0; width: 100%; height: 30px; background-color: #548D0C;
+			}
+			.footer .cont{
+				height:100%; line-height: 30px; text-align: center;
+			}
+			.footer span, .footer a{
+				font-size: 12px; color: #aebdc9;
+			}
+			.footer .self, .footer .gein{
+				margin-left: 30px;
+			}
+
+			.header-bg{
+				height: 100%; width: 100%; background-color: #FFF; opacity: .2;
+			}
+			.menu{
+				position: absolute; left: 0; top: 0; height: 100%; width: 100%;  z-index: 10;
+			}
+			.menu li{
+				float: right; display: block; line-height: 50px; text-align: center; color: #FFF; padding-left: 20px; padding-right: 20px; cursor: pointer;
+			}
+			.menu li:hover{
+				background-color: #7C7C7C;
+			}
+			.menu li.current{
+				background-color: #7C7C7C;
+			}
+			.main .brief{
+				padding-top: 50px; padding-left: 50px;
+			}
+			.brief .logo{
+				font-size: 20px;
+			}
+			.brief .intro{
+				font-size: 16px;
+			}
+			.brief .intro{
+				margin-top: 10px;
+			}
+
+			.pop{
+				position: absolute; box-shadow: 2px 2px 10px #ccc; overflow: hidden; z-index: 100; border: 2px solid green;
+			}
+			.pop .bg{
+				height: 100%; width: 100%; background-color: #FFF; opacity: .9; border-radius: 1px;
+			}
+			.pop .close{
+				position: absolute; right: 10px; top: 10px; font-size: 40px; height: 25px; width: 25px; line-height: 25px; cursor: pointer; color: green; z-index: 100;
+			}
+			.pop .content{
+				position: absolute; left: 0; top: 0; height: 100%; width: 100%; padding-left: 50px; color: #2b2b2b;
+			}
+			.about-me{
+				height: 310px; width: 800px; top: 60px;
+			}
+			.about-me .content{
+				top: 20px;
+			}
+			.about-me .avatar{
+				height: 100px; width: 100px; position: absolute; top: 10px; left: 40px; overflow: hidden; border: 2px solid green;
+			}
+			.about-me .avatar img{
+				height: 140px; width: 140px; margin-left: -20px; margin-top: -20px;
+			}
+			.about-me .info{
+				margin-left: 120px; width: 580px; font-size: 16px;
+			}
+			.about-me .info p{
+				margin-top: 20px;
+				padding-left: 30px;
+			}
+			.about-me .info .name{
+				font-size: 30px; margin-top: 10px; padding-bottom: 5px; border-bottom: 2px solid green; text-shadow: 1px 1px 1px #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-bg"></div>
+			<div class="menu">
+				<ul class="layer-center menu-items">
+					<li onclick="showAbout();">About Me</li>
+					<!--li>Home</li-->
+				</ul>
+			</div>
+		</div>
+		<div class="main layer-center">
+			<div class="brief">
+				<div class="logo"><h1>XiaoFe.com</h1></div>
+				<div class="intro">
+					<p>私人领地，内有猛兽</p>
+				</div>
+			</div>
+			<div class="pop about-me" id="about-me" style="height:320px;width:800px;display:none">
+				<div class="bg"></div>
+				<div class="close" onclick="document.getElementById('about-me').style.display='none';">×</div>
+				<div class="content">
+					<div class="avatar"><img src="../img/me.png" /></div>
+					<div class="info">
+						<p class="name">小铁</p>
+						<p>前端攻城师 \ 僵尸仔</p>
+						<p>死理性派</p>
+						<p>轻度强迫症患者</p>
+						<p>本站旨在个人开发学习使用，恕不对外开放</p>
+						<p>如需联系，请email：xinguo30#gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="layer-center cont">
+				<span class="copyright">Copyright &copy; 2014</span><span class="self"><a href="/">xiaofe.com</a></span><span class="gein"><a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备14017716号-1</a></span>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function showAbout(){
+				var ele = document.getElementById('about-me'),
+					sHeight = parseInt(ele.style.height, 10),
+					sWidth = parseInt(ele.style.width, 10),
+					height = document.body.clientHeight,
+					width = document.body.clientWidth;
+
+				if (ele.style.display != 'none'){
+					return;
+				}
+				ele.style.top = Math.max(0, (height - sHeight)) / 2 + "px";
+				ele.style.left = Math.max(0, (width - sWidth)) / 2 + "px";
+				ele.style.display = 'block';
+			}
+		</script>
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35364126" charset="UTF-8"></script>
+	</body>
+</html>
