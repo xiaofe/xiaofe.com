@@ -16,11 +16,12 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 80);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+//app.set('views', __dirname + '/views');
+//app.set('view engine', 'ejs');
 app.use(express.favicon(__dirname + '/public/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/public/upload/img'}));
+app.use(express.compress());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), {maxAge : 604800000}));
@@ -34,7 +35,6 @@ if ('development' == app.get('env')) {
 	});
 }
 
-// app.get('/', routes.index);
 app.get('/', function (req, res){
 	res.sendfile(__dirname + '/public/html/index.html');
 });
