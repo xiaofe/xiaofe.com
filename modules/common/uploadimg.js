@@ -3,7 +3,7 @@ var outDir = './public/upload/img/';
 
 function main (req, res){
 	var uploadImg = req.files.img,
-		oName = uploadImg.name, 
+		oName = uploadImg.name.replace('..',''), 
 		keepOName = !!req.param('keep'),
 		targetName = keepOName ? oName : (new Date).getTime() + oName.slice(oName.lastIndexOf('.'));
 
