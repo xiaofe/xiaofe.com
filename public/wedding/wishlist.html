@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="sub" content="sub-game-broadcast">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>小铁的婚礼愿望单</title>
+	<style type="text/css">
+		/*CSS Reset*/
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, hgroup,
+nav, section, article, aside, footer, figure, figcaption, menu {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+body {
+  font-family: Helvetica, "Microsoft YaHei";
+  line-height: 24px;
+  font-size: 14px;
+  color: #343434;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none; }
+
+img {
+  display: block;
+  border: 0; }
+
+a, input {
+  text-decoration: none;
+  color: #00a3ef;
+  -webkit-tap-highlight-color: none;
+  -webkit-tap-highlight-color: transparent; }
+
+header, nav, section, article, footer, figure, figcaption {
+  display: block; }
+
+body {
+  background: #edf2f4; }
+
+.ui-c5 {
+  color: #f19d18; }
+
+.ui-box {
+  padding: 12px;
+  margin: 0 12px 8px 12px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: #fff; }
+
+.description {
+	padding: 20px 30px;
+}
+
+.description .title {
+	font-size: 28px;
+	border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.description .content {
+	margin-top: 15px;
+}
+
+.mod-pic {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;}
+  .mod-pic img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; }
+
+.hall-hot-tips .more, .hall-hot-app .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.hall-main-title {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 8px 12px; }
+
+.hall-hot-box {
+  padding: 12px 0; }
+
+.hall-hot-title {
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  -webkit-box-align: center;
+  margin: 0 12px 8px; }
+
+.hall-hot-user {
+  -webkit-box-flex: 1; }
+  .hall-hot-user .name {
+	font-size: 16px;
+	line-height: 20px; }
+  .hall-hot-user .place {
+	font-size: 12px;
+	line-height: 16px;
+	position: relative;
+	margin-top: 4px;
+	color: #939393;
+	padding-left: 11px; }
+
+.hall-hot-number {
+  line-height: 20px;
+  font-size: 12px;
+  text-align: right;
+  max-width: 50%;
+  margin-left: 12px; }
+  .hall-hot-number span {
+	font-size: 16px; }
+
+.hall-hot-pic {
+  width: 100%;
+  height: 0;
+  padding-top: 100%; }
+
+.hall-hot-tips {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 12px;
+  line-height: 20px;
+  display: -webkit-box;
+  font-size: 12px;
+  color: #fff; }
+  .hall-hot-tips .tags {
+	padding: 0 6px;
+	background-color: rgba(0, 0, 0, 0.4); }
+
+.hall-hot-app {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  margin: 8px 12px 0; }
+  .hall-hot-app .btn-buy {
+	width: 20px;
+	height: 20px; }
+.addr .title-s {
+	font-weight: 600;
+	font-size: 16px;
+	padding-bottom: 5px;
+}
+
+.hall-hot-box.disable {
+	background-color: #D0D0D0;
+}
+.hall-hot-box.disable .name {
+	color: #ABABAB;
+}
+.hall-hot-box.disable .hall-hot-app a{
+	color: #777;
+}
+	</style>
+</head>
+<body>
+	<div class="description">
+		<p class="title">愿望清单</p>
+		<section class="content">
+			<p>送现金红包？太俗！</p>
+			<p>那么。。。送啥呢？别费劲想了，因为我已经帮你想好了 ：）</p>
+			<p>希望你们能接受这样的形式。</p>
+		</section>
+	</div>
+	<div id="mod-list" style="">
+	</div>
+
+	<div class="ui-box addr">
+		<p class="title-s">快递地址</p>
+		<p>广东省深圳市南山区深南大道9988号大族科技中心9F 腾讯公司</p>
+		<p>郭欣  13418882230</p>
+	</div>
+	<div class="ui-box more">
+		<p>1. 价格并非准确数额，列表中标明数字是以50为阶梯向上取整值；</p>
+		<p>2. 详细购买分类，请联系小铁；</p>
+		<p>3. 每样东西我都只需要一份，所以他人选掉的礼物将会被置为灰色；</p>
+	</div>
+	<div style="display:none">
+		<img src="img/gift.jpg">
+	</div>
+	<script type="text/javascript" src="list_data.js"></script>
+	<script type="text/javascript">
+		var template = [
+				'<div class="ui-box hall-hot-box $disable$">',
+					'<header class="hall-hot-title">',
+						'<div class="hall-hot-user ">',
+							'<div class="name ui-ellipsis">$name$</div>',
+						'</div>',
+						'<div class="hall-hot-number ui-ellipsis">',
+							'<span class="ui-c5">¥ $price$</span>',
+						'</div>',
+					'</header>',
+					'<div class="mod-pic hall-hot-pic">',
+						'<img src="img/$pic$">',
+					'</div>',
+					'<footer class="hall-hot-app">',
+						'<a href="javascript:;" onclick="$clickFn$return false" class="btn-buy">Choose Me</a>',
+					'</footer>',
+				'</div>'
+			].join(''),
+			render = function (data){
+				var html = ''
+				for (var i = 0, one; one = data[i]; i++){
+					html += template.replace('$name$', one.name)
+									.replace('$pic$', one.pic)
+									.replace('$price$', one.price)
+									.replace('$disable$', one.disable ? 'disable' : '')
+									.replace('$clickFn$', one.disable ? '' : 'choose();')
+				}
+				return html
+			},
+			count = 0,
+			choose = function (){
+				switch (++count){
+					case 1 : 
+					case 2 : 
+						alert('很抱歉，因为小铁那家伙太懒了！这个功能并没有实现！选定了直接微信喊他吧！')
+						break
+					case 3 :
+						alert('别点了，说了没有做这功能啊！微信～微信～微信～')
+						break
+					case 4 :
+						alert('说了别点了，没用的啊！ >.<')
+						break
+					case 5 :
+						alert('你没救了，我放弃，你随便点吧。。。。')
+						break
+				}
+			}
+  
+		document.getElementById('mod-list').innerHTML = render(ListData)
+	</script>
+</body>
+</html>

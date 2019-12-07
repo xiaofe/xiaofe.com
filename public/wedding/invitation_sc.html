@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>婚礼邀请函</title>
+	<meta name="description" content="我们要结婚啦！2016年05月04日10时30分，诚挚邀请您的光临。点击查看...">
+	<link rel="stylesheet" type="text/css" href="inv.css">
+</head>
+<body>
+	<div class="wrapper">
+		<section class="page cover" style="background-image:url(img/2_cover.jpg)"></section>
+		<section class="page page1" style="background-image:url(img/2_1.jpg)"></section>
+		<section class="page page2" style="background-image:url(img/2_2.jpg)"></section>
+		<section class="page page2" style="background-image:url(img/2_3.jpg)"></section>
+		<section class="page page3" style="background-image:url(img/2_4.jpg)"></section>
+		<section class="page page4" style="background-image:url(img/2_5.jpg)"></section>
+		<section class="page page_loc">
+			<div class="loc-item regard">
+				<img src="http://ecard.source.izhaowo.com/ecard_0201649_qRtrrZjfMKzBEmyOuVA?imageView2/1/w/68/h/68" class="avatar">
+				<div class="wp-regard-text">
+					<div class="regard-text">
+						<span class="u-message u-text">欢迎来参加婚礼，做我们爱情的见证人。恭候你的到来！</span>
+					</div>
+				</div>
+			</div>
+			<div class="loc-item date-title">
+				<img src="img/divier_l.png" class="sep-l">
+				<span class="u-text title">婚礼日期</span>
+				<img src="img/divier_r.png" class="sep-r">
+			</div>
+			<div class="date-cont">
+				<span class="u-text">2016-05-04 10:30</span>
+			</div>
+			<div class="loc-item loc-title">
+				<img src="img/divier_l.png" class="sep-l">
+				<span class="u-text title">婚礼地址</span>
+				<img src="img/divier_r.png" class="sep-r">
+			</div>
+			<div class="map">
+				<div class="wp-map">
+					<img class="navi-img" src="img/map_sc.png">
+					<div class="loc-item navi-info">
+						<div class="navi-name">
+							<span>地址:简阳市城市名人酒店</span>
+						</div>
+						<span class="navi-btn">导航</span>
+					</div>
+				</div>
+			</div>
+			<div class="back-trig">
+				<button onclick="window.g_slider.moveTo(0, true);">回到首页</button>
+			</div>
+		</section>
+	</div>
+	<div class="fix-pos">
+		<div class="audio-cont">
+			<div id="audio" class="audio-media">
+				<audio id="audioplayer" src="http://ecard.source.izhaowo.com/ecard_120151022_wV4UFdBrszTy4Xb8FUy" loop="true" preload="preload"></audio>
+			</div>
+			<div class="audio-trig" id="audioHandler"></div>
+		</div>
+		<div class="upup" style="display: block;">
+			<a href="javascript:void(0);" class="up-arrow"></a>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/zepto_with_touch.js"></script>
+	<script type="text/javascript" src="../lib/PageSlider.js"></script>
+	<script type="text/javascript">
+		// page slider
+		var pageCount = $('.wrapper .page').size()
+		var g_slider = new PageSlider({
+		    pages: $('.wrapper .page'),
+		    // dev: 5,
+		    onchange: function (){
+		    	if (this.index == pageCount - 1){
+		    		$('.upup').hide()
+		    	} else {
+		    		$('.upup').show()
+		    	}
+		    }
+		})
+
+		// audio
+		var audioEl = $('#audioplayer').get(0)
+		$('#audioHandler').on('click', function (){
+			audioEl.paused ? audioEl.play() : audioEl.pause()
+		})
+		// audioEl.play()
+
+
+		// navi
+		$('.navi-btn').on('click', function (){
+			location.href = "http://m.amap.com/navi/?dest=104.543375,30.4084&destName=" + encodeURIComponent('城市名人酒店') + "&naviBy=car&key=4828d3efad639020a1d175b68009bfa1"
+		})
+	</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35364126" charset="UTF-8"></script>
+</body>
+</html>
