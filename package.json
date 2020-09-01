@@ -11,7 +11,7 @@
     "ejs": "*",
     "errorhandler": "^1.4.3",
     "express": "^4.13.4",
-    "gm": "1.16.0",
+    "gm": "1.23.1",
     "method-override": "^2.3.5",
     "morgan": "^1.7.0",
     "multer": "^1.1.0",
